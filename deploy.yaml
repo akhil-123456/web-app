@@ -7,7 +7,6 @@ spec:
   selector:
     matchLables:
       apps: frontend
-      type: webapp
     replicas: 3
     template: 
       metadata:

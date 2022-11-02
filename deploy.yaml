@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: deployment
+  namespace: akhil
+spec: 
+  selector:
+    matchLables:
+      apps: frontend
+      type: webapp
+    replicas: 3
+    template: 
+      metadata:
+        name: tomcat
+        labels:
+          apps: frontend
+          type: webapp
+      spec: 
+        containers:
+        - name: tomcat
+          image: tomcat:latest
+          ports: 
+          - containerPort: 80
